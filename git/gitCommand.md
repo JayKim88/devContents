@@ -1,4 +1,4 @@
-## Git Most useful Command
+## Most useful Git Command
 
 <!-- <p>&nbsp;</p> -->
 
