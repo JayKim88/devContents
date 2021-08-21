@@ -90,5 +90,6 @@ all the code is still grouped together, which could be noted as an unsung benefi
 }
 ```
 
+<br/>
 Conclusion: It's good to know the usage of & for developing with Material UI :)  
 When you style it, very useful to code with & to approach the target element!
