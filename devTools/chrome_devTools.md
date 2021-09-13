@@ -17,5 +17,8 @@ This file was written using [Chrome DevTools](https://developer.chrome.com/docs/
 - [Network features reference](https://developer.chrome.com/docs/devtools/network/reference/)
 - [Timing breakdown phases explained](https://developer.chrome.com/docs/devtools/network/reference/#timing-explanation)
 
-to be continued...Starting from Storage(https://developer.chrome.com/docs/devtools/storage/cookies/)
+### Javascript
+- [Debug Javascript](https://developer.chrome.com/docs/devtools/javascript/)
+
+to be continued...Starting from Pause your code with breakpoints(https://developer.chrome.com/docs/devtools/javascript/breakpoints/)
 
