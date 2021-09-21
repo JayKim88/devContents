@@ -7,13 +7,18 @@ Applications should be understandable and usable by people regardless of auditor
 
 ## Guides
 
-1. what is accessibility ?
-1. HTML: A good basis for accessibility
-1. CSS and JavaScript accessibility best practices
-1. WAI-ARIA basics
-1. Accessible multimedia
-1. Mobile accessibility
-   <br/>
+---
+
+1. [**What is accessibility ?**](#1.-what-is-accessibility-?)
+1. **HTML: A good basis for accessibility**
+1. **CSS and JavaScript accessibility best practices**
+1. **WAI-ARIA basics**
+1. **Accessible multimedia**
+1. **Mobile accessibility**
+
+---
+
+<br/>
 
 ### 1. what is accessibility ?
 
@@ -58,6 +63,84 @@ Semantic HTML doesn't take any longer to write than non-semantic (bad) markup if
 
 ### 3. CSS and JavaScript accessibility best practices
 
-for more details
+#### CSS
 
-- [MDN_Accessbility](https://developer.mozilla.org/en-US/docs/Learn/Accessibility)
+- Select sensible font sizes, line heights, letter spacing, etc. to make your text logical, legible, and comfortable to read.
+- Make sure your headings stand out from your body text, typically big and bold like the default styling. Your lists should look like lists.
+- Your text color should contrast well with your background color.
+
+#### Javascript
+
+- Good semantics: Using the right element for the right job. For example, making sure you use headings and paragraphs, and button and a elements
+- Making sure content is available as text, either directly as text content, good text labels for form elements, or text alternatives, e.g. alt text for images.
+
+  Complex functionality like 3D games are not so easy to make accessible — a complex 3D game created using WebGL will be rendered on a canvas element, which has no facility at this time to provide text alternatives or other information for severely visually impaired users to make use of. these game doesn't really have these people as a main target audience, and it would be unreasonable to make it 100% accessible to blind people, however you could implement keyboard controls so it is usable by non-mouse users, and make the color scheme contrasting enough to be usable by those with color deficiencies.
+
+  Keeping Javascript unobtrusive
+
+  - Providing client-side form validation, which alerts users to problems with their form entries quickly, without having to wait for the server to check the data. If it isn't available, the form will still work, but validation might be slower.
+
+[For more details](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/CSS_and_JavaScript)
+
+### 4. WAI-ARIA basics
+
+[WAI-ARIA](https://www.w3.org/TR/wai-aria-1.1/#introduction) (Web Accessibility Initiative - Accessible Rich Internet Applications) is a specification written by the W3C, defining a set of additional HTML attributes that can be applied to elements to provide additional semantics and improve accessibility wherever it is lacking.
+
+[Three main features](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques)
+
+- Roles
+  : These define what an element is or does. role="navigation" (nav) or role="complementary" (aside), role="banner", role="search", role="tabgroup", role="tab", etc., which are commonly found in UIs.
+- Properties: These define properties of elements, which can be used to give them extra meaning or semantics. As an example, aria-required="true" specifies that a form input needs to be filled in order to be valid, whereas aria-labelledby="label" allows you to put an ID on an element, then reference it as being the label for anything else on the page.
+
+  ```html
+  <!-- for example -->
+  <img src="dinosaur.png" aria-labelledby="dino-label" />
+
+  <p id="dino-label">The Mozilla red Tyrannosaurus ...</p>
+  ```
+
+  In this case, we have presented our description of the image as a regular text paragraph, given it an id, and then used the aria-labelledby attribute to refer to that id, which causes screen readers to use that paragraph as the alt text/label for that image. **This is especially useful if you want to use the same text as a label for multiple images — something that isn't possible with alt.**
+
+- States: Special properties that define the current conditions of elements, such as aria-disabled="true", which specifies to a screenreader that a form input is currently disabled. States differ from properties in that properties don't change throughout the lifecycle of an app, whereas states can change, generally programmatically via JavaScript.
+
+  <div align= "center" style="background-color:white;">
+    <img src="https://www.w3.org/TR/wai-aria-1.1/img/accessibleelement.png" alt="diagram" width="80%"/>
+  </div>
+
+### 5. Accessible multimedia
+
+Another category of content that can create accessibility problems is multimedia — video, audio, and image content need to be given proper textual alternatives so they can be understood by assistive technologies and their users.
+
+- Accessible audio and video controls  
+  : HTML5 video and audio instances even come with a set of inbuilt controls that allow you to control the media straight out of the box.
+
+  However, there are problems with these controls:
+
+  - They are not keyboard-accessible in most browsers, i.e. you can't tab between the controls inside the native player. Opera and Chrome provide this to some degree, but it still isn't ideal.
+  - Different browsers give the native controls differing styling and functionality, and they aren't stylable, meaning that they can't be easily made to follow a site style guide.
+
+  <br/>
+
+- Audio transcripts  
+  : To provide deaf people with access to audio content, you really need to create text transcripts. These can either be included on the same page as the audio in some way or included on a separate page and linked to.
+
+- Video text tracks  
+  : To make video accessible for deaf, blind, or even other groups of users (such as those on low bandwidth, or who don't understand the language the video is recorded in), you need to include text tracks along with your video content.
+
+[Solution for the above cases](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Multimedia)
+
+### 6. Mobile accessibility
+
+With web access on mobile devices being so popular and renowned platforms such as iOS and Android having full-fledged accessibility tools, it is important to consider the accessibility of your web content on these platforms.
+
+To make a website accessible and usable on mobile, you just need to follow general good web design and accessibility best practices.
+
+Three exceptions that need special consideration for mobile
+
+- [Control mechanisms](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Mobile#control_mechanisms): Make sure interface controls such as buttons are accessible on mobiles (i.e., mainly touchscreen), as well as desktops/laptops (mainly mouse/keyboard).
+- [User input](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Mobile#user_input): Make user input requirements as painless as possible on mobile (e.g., in forms, keep typing to a minimum).
+- [Responsive design](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Mobile#responsive_design): Make sure layouts work on mobile, conserve image download sizes, and think about the provision of images for high-resolution screens.
+  <br/>
+  <br/>
+
+### For more details about [Accessbility](https://developer.mozilla.org/en-US/docs/Learn/Accessibility)
