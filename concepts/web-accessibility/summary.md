@@ -10,11 +10,11 @@ Applications should be understandable and usable by people regardless of auditor
 ---
 
 1. [**What is accessibility ?**](#1.-what-is-accessibility-?)
-1. **HTML: A good basis for accessibility**
-1. **CSS and JavaScript accessibility best practices**
-1. **WAI-ARIA basics**
-1. **Accessible multimedia**
-1. **Mobile accessibility**
+1. [**HTML: A good basis for accessibility**](#2.-HTML:-A-good-basis-for-accessibility)
+1. [**CSS and JavaScript accessibility best practices**](#3.-CSS-and-JavaScript-accessibility-best-practices)
+1. [**WAI-ARIA basics**](#4.-WAI-ARIA-basics)
+1. [**Accessible multimedia**](#5.-Accessible-multimedia)
+1. [**Mobile accessibility**](#6.-Mobile-accessibility)
 
 ---
 
