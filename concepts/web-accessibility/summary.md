@@ -107,6 +107,11 @@ Semantic HTML doesn't take any longer to write than non-semantic (bad) markup if
     <img src="https://www.w3.org/TR/wai-aria-1.1/img/accessibleelement.png" alt="diagram" width="80%"/>
   </div>
 
+How to use ARIA: https://www.youtube.com/watch?v=g9Qff0b-lHk
+
+  <div align= "center" style="background-color:white;">
+    <img src="./aria_example.png" alt="diagram" width="80%"/>
+    
 ### 5. Accessible multimedia
 
 Another category of content that can create accessibility problems is multimedia — video, audio, and image content need to be given proper textual alternatives so they can be understood by assistive technologies and their users.
