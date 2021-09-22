@@ -108,9 +108,9 @@ Semantic HTML doesn't take any longer to write than non-semantic (bad) markup if
   </div>
 
 How to use ARIA: https://www.youtube.com/watch?v=g9Qff0b-lHk
-
-  <div align= "center" style="background-color:white;">
+  <div>
     <img src="./aria_example.png" alt="diagram" width="80%"/>
+  </div>
     
 ### 5. Accessible multimedia
 
