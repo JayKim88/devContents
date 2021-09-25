@@ -5,6 +5,9 @@
 - [fastcompany](https://www.fastcompany.com/)
 - [dzone](https://dzone.com/)
 
+## Engineering 
+- [pragmatism frontend development](https://peter-cho.gitbook.io/book/)
+- [freeCodeCamp](https://www.freecodecamp.org/news/)
 
 ## Design
 - [ux design weekly](https://uxdesignweekly.com/)
