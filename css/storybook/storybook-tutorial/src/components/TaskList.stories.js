@@ -16,6 +16,7 @@ export const Default = Template.bind({});
 Default.args = {
   // Shaping the stories through args composition.
   // The data was inherited from the Default story in task.stories.js.
+  // TaskStories를 가져와 스토리 속의 인수(arguments)를 합성(compose)할 수 있다.
   tasks: [
     { ...TaskStories.Default.args.task, id: "1", title: "Task 1" },
     { ...TaskStories.Default.args.task, id: "2", title: "Task 2" },

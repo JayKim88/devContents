@@ -1,7 +1,7 @@
-// src/lib/redux.js
-
 // A simple redux store/actions/reducer implementation.
 // A true app would be more complex and separated into different files.
+// 데이터 저장을 위해 React 라이브러리인 Redux를 사용하여 앱을 위해 간단한 데이터 모델을 만든다.
+// 이 패턴은 Apollo와 MobX 같은 다른 데이터 관리 라이브러리에도 적용 가능.
 import { createStore } from "redux";
 
 // The actions are the "names" of the changes that can happen to the store

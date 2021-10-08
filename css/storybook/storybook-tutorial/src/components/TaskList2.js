@@ -3,6 +3,7 @@ import React from "react";
 import Task from "./Task";
 import PropTypes from "prop-types";
 
+// State 구현.
 export default function TaskList({ loading, tasks, onPinTask, onArchiveTask }) {
   const events = {
     onPinTask,

@@ -7,7 +7,7 @@ export default {
   title: "Task",
 };
 //component -- 해당 컴포넌트,
-//title -- Storybook 앱의 사이드바에서 컴포넌트를 참조하는 방법,
+//title -- Storybook 앱의 사이드바에서 컴포넌트를 참조하는 방법.
 
 const Template = (args) => <Task {...args} />;
 // Template.bind({})는 함수의 복사본을 만드는 표준 JavaScript의 한 기법.
