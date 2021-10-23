@@ -14,8 +14,7 @@
 
 ### 크기에 따른 분류
 
-1. LAN(Local Area Network)
-   : 가까운 지역을 하나로 묶은 네트워크
+1. LAN(Local Area Network): 가까운 지역을 하나로 묶은 네트워크
 1. WAN(Wide Area Network): 가까운 지역끼리 묶인 LAN 과 LAN 을 다시 하나로 묶은 것
 
 ### 연결 형태에 따른 분류
