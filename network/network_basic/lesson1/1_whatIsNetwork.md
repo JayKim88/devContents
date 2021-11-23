@@ -43,7 +43,7 @@
 
 ### traceroute 로 구글에 가기까지 거쳐간 네트워크 대역대 확인하기
 
-![traceroute](./img/traceroute.png)
+![traceroute](./traceroute.png)
 
 star : IP 주소 공개 안함
 
@@ -53,7 +53,7 @@ star : IP 주소 공개 안함
 
 ### Wireshark 로 프로토콜 캡쳐 후 확인해보기
 
-![wireshark](./img/wireshark.png)
+![wireshark](./wireshark.png)
 
 - Ethernet: 전세계의 사무실이나 가정에서 일반적으로 사용되는 LAN에서 가장 많이 활용되는 기술 규격
 - Internet Protocol: 송신 호스트와 수신 호스트가 패킷 교환 네트워크(패킷 스위칭 네트워크, Packet Switching Network)에서 정보를 주고받는 데 사용하는 정보 위주의 규약
