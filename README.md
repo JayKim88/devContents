@@ -5,4 +5,3 @@
 ## Rules
 - 1 day 1 commit
 - 2 Steps: Principle and Practice
-- All content is written in English
