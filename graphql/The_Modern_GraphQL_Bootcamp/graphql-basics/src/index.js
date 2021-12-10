@@ -1,5 +1,8 @@
 import { GraphQLServer } from "graphql-yoga";
 
+//Scalar types = String, Boolean, Int, Float, ID
+
+// Demo Data
 const users = [
   {
     id: "123",
@@ -44,11 +47,19 @@ const posts = [
   },
 ];
 
+const comments = [
+  { id: "101", text: "helloo", author: "123", post: "10" },
+  { id: "112", text: "sleepy", author: "123", post: "11" },
+  { id: "123", text: "nice to meet ya", author: "000", post: "11" },
+  { id: "131", text: "happy coding!", author: "234", post: "12" },
+];
+
 //Type definition (schema)
 const typeDefs = `
   type Query {
    users(query: String): [User!]!
    posts(query: String): [Post!]!
+   comments: [Comment!]!
    me: User!
    post: Post!
   }
@@ -58,6 +69,8 @@ const typeDefs = `
       name: String!
       email: String!
       age: Int
+      posts: [Post!]!
+      comments: [Comment!]!
   }
 
   type Post {
@@ -66,15 +79,22 @@ const typeDefs = `
       body: String!
       published: Boolean!
       author: User!
+      comments: [Comment!]!
+  }
+
+  type Comment {
+    id: ID!
+    text: String!
+    author: User!
+    post: Post!
   }
 `;
 //Resolver
 const resolvers = {
   Query: {
     users(parent, args, ctx, info) {
-      console.log(args);
-
       if (!args.query) {
+        // posts in User: users 배열의 0번째부터 마지막까지 순차적으로 진행되며 user id = post author 인 경우를 찾아 객체 배열을 만들어낸다.
         return users;
       }
 
@@ -84,6 +104,7 @@ const resolvers = {
     },
     posts(parent, args, ctx, info) {
       if (!args.query) {
+        // individual post will call author function in Post
         return posts;
       }
 
@@ -96,6 +117,9 @@ const resolvers = {
           .includes(args.query.toLowerCase());
         return isTitleMatch || isBodyMatch;
       });
+    },
+    comments(parent, args, ctx, info) {
+      return comments;
     },
     me() {
       return {
@@ -114,9 +138,39 @@ const resolvers = {
     },
   },
   Post: {
+    // parent = Parent Object = post in this case.
     author(parent, args, ctx, info) {
       return users.find((user) => {
         return user.id === parent.author;
+      });
+    },
+    comments(parent, args, ctx, info) {
+      return comments.filter((comment) => {
+        return comment.post === parent.id;
+      });
+    },
+  },
+  User: {
+    posts(parent, args, ctx, info) {
+      return posts.filter((post) => {
+        return post.author === parent.id;
+      });
+    },
+    comments(parent, args, ctx, info) {
+      return comments.filter((comment) => {
+        return comment.author === parent.id;
+      });
+    },
+  },
+  Comment: {
+    author(parent, args, ctx, info) {
+      return users.find((user) => {
+        return user.id === parent.author;
+      });
+    },
+    post(parent, args, ctx, info) {
+      return posts.find((post) => {
+        return post.id === parent.post;
       });
     },
   },
