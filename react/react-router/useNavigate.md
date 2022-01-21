@@ -41,3 +41,5 @@ location {
 ```
 만약 page 를 이탈하면(out of product-settings) 페이지 리프레쉬가 되어 state value 는 사라진다(empty).  
 하지만 해당 페이지에서 리프레쉬할 경우에는 이 state 가 유지된다. 
+
+참고: https://reach.tech/router/api/navigate
