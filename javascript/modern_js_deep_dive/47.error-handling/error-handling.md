@@ -24,6 +24,7 @@ Error 생성자 함수가 생성한 에러 객체는 message 프로퍼티와 sta
 - stack 프로퍼티 값은 에러를 발생시킨 콜스택의 호출 정보를 나타내는 문자열로 디버깅
 
 목적으로 사용한다.
+
 &nbsp;&nbsp;<img src='./image/2.png' width="600px">
 
 자바스크립트는 총 7가지의 에러 객체를 생성할 수 있는 Error 생성자 함수를 제공한다. 에러 객체의 프로토타입은 모두 Error.prototype 을 상속받는다.
