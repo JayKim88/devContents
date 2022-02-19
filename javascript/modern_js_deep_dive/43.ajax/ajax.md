@@ -60,7 +60,7 @@ Javascript Object Notation
 
 43.2.3 JSON.parse(string → object)
 
-이 메서드는 JSON 포맷의 문자열을 객체로 변환한다. 서버로부터 클라이언트에 전송된 JSON 데이터는 문자열이기 때문에 JSON 포맷 문자열을 객체화해야 하는데 이를 역직렬화(deserializing) 이라고 한다.
+이 메서드는 JSON 포맷의 문자열을 객체로 변환한다. 서버로부터 클라이언트에 전송된 JSON 데이터는 문자열이기 때문에 JSON 포맷 문자열을 객체화해야 하는데 이를 역직렬화(deserializing) 이라고 한다.  
 <img src='./image/2.png' width="600px">
 
 ### 43.3 XMLHttpRequest
@@ -106,15 +106,19 @@ const xhr = new XMLHttpRequest();
 43.3.2 XMLHttpRequest 객체의 프로퍼티와 메서드
 
 1.  프로토타입 프로퍼티
+
     <img src='./image/3.png' width="600px">
 
 2.  이벤트 핸들러 프로퍼티
+
     <img src='./image/4.png' width="600px">
 
 3.  메서드
+
     <img src='./image/5.png' width="600px">
 
 4.  정적 프로퍼티
+
     <img src='./image/6.png' width="600px">
 
 43.3.3 HTTP 요청 전송
@@ -138,11 +142,11 @@ const xhr = new XMLHttpRequest();
     - GET 요청 메서드: 데이터를 URL의 일부인 쿼리 문자열로 서버에 전송
     - POST 요청 메서드: 데이터(페이로드)를 요청 몸체(Request Body)에 담아 전송
 
-      send 메서드에는 요청 몸체에 담아 전송할 데이터를 인수로 전달할 수 있다.
+    send 메서드에는 요청 몸체에 담아 전송할 데이터를 인수로 전달할 수 있다.
 
-      ```jsx
-      xhr.send(JSON.stringify({ id: 1, content: "HTML", completed: false }));
-      ```
+    ```jsx
+     xhr.send(JSON.stringify({ id: 1, content: "HTML", completed: false }));
+    ```
 
 3.  XMLHttpRequest.prototype.setRequestHeader
     <br/>
@@ -167,7 +171,7 @@ const xhr = new XMLHttpRequest();
     xhr.setRequestHeader("accept", "application/json");
     ```
 
-    설정하지 않을 시 Accept 헤더가 _ / _ 로 전송된다.
+    설정하지 않을 시 Accept 헤더가 */* 로 전송된다.
 
 43.3.4 HTTP 응답 처리
 
