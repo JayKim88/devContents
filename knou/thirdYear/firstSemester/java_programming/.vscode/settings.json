@@ -1,3 +1,7 @@
 {
-  "java.project.sourcePaths": ["practice/src", "1_overview/practices"]
+  "java.project.sourcePaths": [
+    "practice/src",
+    "1_overview/practices",
+    "3_basic_grammar2/practices"
+  ]
 }

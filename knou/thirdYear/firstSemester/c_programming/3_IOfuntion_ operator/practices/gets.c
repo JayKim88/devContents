@@ -21,7 +21,7 @@ void main()
 }
 
 /*
-문자열 입력?hihihi hihihihi
+문자열 입력?hihihi hihihih1i
 gets()로 문자열 입력= hihihi hihihihi
 
 문자열 입력?hihihiih hihih
