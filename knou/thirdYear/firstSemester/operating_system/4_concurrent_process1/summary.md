@@ -103,9 +103,12 @@ function Test_and_Set(var target: boolean): boolean;
   <br>
   <img width="600px"  src='./image/7.png'>
 
-    <img width="600px"  src='./image/8.png'>
+  - s가 0이면 대기, s가 1이면 진입 가능.
+  - V(s) 에서 if 구문의 뜻은, s 의 변화 없이 대기중이었던 프로세스를 진행시키기 위함.
 
-    <img width="600px"  src='./image/9.png'>
+  <img width="600px"  src='./image/8.png'>
+
+  <img width="600px"  src='./image/9.png'>
 
 동기화 문제 해결
 
