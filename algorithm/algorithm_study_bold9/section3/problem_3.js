@@ -25,7 +25,7 @@ function solution(string) {
       result += s;
     }
   }
-  return result;
+  return Number(result);
 }
 
 console.log(solution("10000234001000000g0en2T0s8eSoft"));
