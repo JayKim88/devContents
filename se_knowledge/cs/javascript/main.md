@@ -1,6 +1,6 @@
-## Javascript Question
+# Javascript Question
 
-<h4> 1. Shallow Copy 와 Deep Copy</h4>
+<h2>1. Shallow Copy 와 Deep Copy</h2>
 
 자바스크립트에서 자료형은 아래와 같이 크게 기본형(Primitive Value) 과 참조형(Reference Type) 2가지로 나눌 수 있다.
 
@@ -39,7 +39,7 @@ console.log(array); // ['d', 'b', 'c']
 위와 같은 특성으로 인해 참조형 copy 는 **shallow copy(얕은 복사)** 와 **deep copy(깊은 복사)** 가 있다.
 shallow copy는 가장 상위 객체만 새로 생성되고 내부 객체들은 참조 관계인 경우를 의미하고 deep copy는 내부 객체까지 모두 새로 생성된 것을 의미한다.
 
-**Shallow Copy 코드**
+### **Shallow Copy 코드**
 
 같은 주소를 보고 있기 때문에 복사한 variable 의 항목을 변경하면 원본의 값도 변경된다.
 
@@ -62,7 +62,7 @@ employDetailsDuplicate.name = "NameChanged";
 
 - 단점 : 두개 이상의 객체가 같은 대상을 가리키고 있기 때문에, 의도치 않게 여러 개의 객체가 동시에 수정될 수 있다.
 
-**Deep Copy 코드**
+### **Deep Copy 코드**
 
 객체 내부 항목들에 value 가 직접 할당되는 깊은 복사이기 때문에 복사한 variable 의 항목이 변경되더라도 원본 값엔 영향을 주지 않는다.
 
@@ -81,7 +81,7 @@ let employDetailsDuplicate = {
 
 <img src='./image/1.png'>
 
-<h4>2. 이벤트 루프와 태스크 큐(비동기 처리하는 프로세스)</h4>
+<h2> 2. 이벤트 루프와 태스크 큐(비동기 처리하는 프로세스)</h2>
 
 브라우저의 동작을 보면 태스크가 동시에 처리되는 것처럼 느껴지는데, 이러첨 자바스크립트의 동시성(concurrency) 을 지원하는 것이 이벤트 루프(event loop)이다. 이벤트 루프는 브라우저에 내장되어 있는 기능이다.
 
@@ -101,8 +101,7 @@ let employDetailsDuplicate = {
 
 ### 비동기처리 프로세스 예제
 
-<img src='./image/2-2
-.png' width="600px">
+<img src='./image/2-2.png' width="600px">
 
 1. 전역 코드 평가 → 전역 실행 컨텍스트 생성 → 콜 스택 푸시
 
