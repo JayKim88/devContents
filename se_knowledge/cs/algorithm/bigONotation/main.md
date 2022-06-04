@@ -15,15 +15,15 @@
 
 - 오메가 표기법 (Big-Ω Notation)
   - 하한점근, 최선의 경우 표기법
-    <img src='./image/bo_1.png' width="400px">
+    <img src='./image/1.png' width="400px">
 - 세타 표기법 (Big-θ Notation)
   - 상한/하한 점근(평균점근)
-    <img src='./image/bo_2.png' width="400px">
+    <img src='./image/2.png' width="400px">
 - 최악의 경우 : 빅오 표기법 (Big-O Notation)
   - 상한점근, 최악의 경우 표기법
   - 최악의 경우에도 이보다는 빠르다는 의미
   - 때문에 신뢰도가 높아 가장 일반적으로 사용되는 표기법
-    <img src='./image/bo_3.png' width="400px">
+    <img src='./image/3.png' width="400px">
 
 ## 빅오 표기법(Big-O)
 
@@ -35,7 +35,7 @@ Big-O로 측정되는 복잡성에는 시간과 공간복잡도가 있는데
 - 공간복잡도는 알고리즘이 실행될때 사용하는 메모리의 양을 나타낸다.
   요즘에는 데이터를 저장할 수 있는 메모리의 발전으로 중요도가 낮아졌다.
 
-<img src='./image/bo_4.png' width="600px">
+<img src='./image/4.png' width="600px">
 
 ## 시간 복잡도
 
@@ -61,7 +61,7 @@ O(C^n) – 지수 시간 : 문제를 해결하기 위한 단계의 수는 주어
 
 실행시간이 빠른순으로 입력 N값에 따른 서로 다른 알고리즘의 시간복잡도
 
-<img src='./image/bo_5.png' width="600px">
+<img src='./image/5.png' width="600px">
 
 ## 시간복잡도를 구하는 방법
 
@@ -74,8 +74,8 @@ O(C^n) – 지수 시간 : 문제를 해결하기 위한 단계의 수는 주어
 
 ## 정렬 알고리즘 비교
 
-<img src='./image/bo_6.png' width="600px">
+<img src='./image/6.png' width="600px">
 
 ## 자료구조 비교
 
-<img src='./image/bo_7.png' width="600px">
+<img src='./image/7.png' width="600px">
