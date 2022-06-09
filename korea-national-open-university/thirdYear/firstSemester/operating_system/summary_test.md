@@ -261,7 +261,7 @@
 
 2015년
 
-- 47번 정답 2번, LRU 페이지 교체기법 -> Least Recently Used
-- 48번 정답 2번, NUR 페이지 교체기법 -> Not Used Recently
+- 47번 정답 4번, LRU 페이지 교체기법 -> Least Recently Used
+- 48번 정답 3번, NUR 페이지 교체기법 -> Not Used Recently
 - 49번 정답 1번, 클록 페이지 교체기법
 - 51번 정답 3번, FCFS 스케줄링
