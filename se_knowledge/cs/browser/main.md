@@ -1,6 +1,6 @@
 # Browser
 
-#### 1. 서버로부터 리소스를 받은 후 브라우저 동작 원리
+### 1. 서버로부터 리소스를 받은 후 브라우저 동작 원리
 
 1.  브라우저는 서버로부터 HTML, CSS, Javascript, 이미지 파일 등을 응답받는다.
 2.  HTML, CSS 파일은 **렌더링 엔진**의 HTML 파서와 CSS 파서에 의해 파싱(Parsing)되어 DOM, CSSOM 트리로 변환되고 렌더 트리로 결합된다. 이 **렌더 트리**를 기반으로 브라우저는 웹페이지를 표시한다.
@@ -37,7 +37,9 @@
 
 For more detail: [프론트엔드 개발자라면 알고 있어야 할 브라우저의 동작 과정](https://yozm.wishket.com/magazine/detail/1338/)
 
-#### 2. SPA - CSR/SSR/SSG
+---
+
+### 2. SPA - CSR/SSR/SSG
 
 <b>Single Page Application</b>
 html 문서 전체가 아니라 json 과 같은 포맷으로 서버에서 필요한 데이터만 받아올 수 있다.
@@ -53,8 +55,7 @@ height="230px"
 >
 </div>
 <br>
-
----
+<br>
 
 <h4>Table of Contents:</h4>
 
@@ -64,7 +65,8 @@ height="230px"
 - Static Site Generation(SSG)
 - Conclusion
 
----
+<br>
+<br>
 
 <h4>Client Side Rendering(CSR)</h4>
 
@@ -99,7 +101,6 @@ html 파일에 아래와 같이 body 안에서 script 로 링크된 app.js 자�
 <img src='./image/2-5.png' width="500px">
 
 <br>
-<br>
 
 <h4>Server Side Rendering(SSR)</h4>
 
@@ -107,7 +108,6 @@ html 파일에 아래와 같이 body 안에서 script 로 링크된 app.js 자�
 
 <img src='./image/2-6.png' width="500px">
 
-<br>
 <br>
 
 **개선점**
@@ -126,11 +126,13 @@ html 파일에 아래와 같이 body 안에서 script 로 링크된 app.js 자�
 <h4>TTV(Time To View) & TTI(Time To Interact)</h4>
 
 1.CSR
+
 TTV 와 TTI 가 동시에 가능해진다. 화면이 나타나는 시간이 느리다.
 
 <img src='./image/2-7.png' width="500px">
 
 2.SSR
+
 html 을 먼저 받아와서 사용자가 화면을 볼 수 있지만, javascript 파일을 받아올 때까지 클릭과 같은 interact 는 할 수 없다.
 화면을 렌더링한 시점부터 인터랙션 기능이 가능할 때까지의 공백기간이 꽤 긴 편이다.
 
@@ -150,8 +152,6 @@ html 을 먼저 받아와서 사용자가 화면을 볼 수 있지만, javascrip
 <h4>Opinion 😃</h4>
 
 <img src='./image/2-9.png'>
-
----
 
 <h4>Conclusion</h4>
 
