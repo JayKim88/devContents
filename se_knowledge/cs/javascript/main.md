@@ -119,3 +119,83 @@ let employDetailsDuplicate = {
 6. 이벤트 루프에 의해 콜스택 비어 있음이 감지 → 태스크 큐의 콜백함수 foo 가 콜스택에 푸시 되어 실행된다. → foo 팝
 
 **자바스크립트 엔진은 싱글 스레드로 동작하고, 브라우저는 멀티 스레드로 동작하기 때문에 비동기 처리가 가능하다. 즉, 브라우저와 자바 스크립트 엔진이 협력하여 비동기 함수를 실행하는 것이다.**
+
+<h2> 3. this</h2>
+
+- this는 자신이 속한 객체 또는 자신이 생성할 인스턴스를 가리키는 자기 참조 변수다.
+- this를 통해 자신이 속한 객체 또는 자신이 생성할 인스턴스의 프로퍼티나 메서드를 참조할 수 있다.
+- this는 함수가 호출되는 방식에 따라 this에 \*바인딩될 값, 즉 this 바인딩이 동적으로 결정된다.
+
+\*this바인딩
+: 바인딩이란 식별자와 값을 연결하는 과정을 의미한다. 예를 들어, 변수 선언은 변수 이름과 확보된 메모리 공간의 주소를 바인딩 하는 것이다.
+
+함수를 호출하는 방식은 아래와 같다.
+
+1. 일반 함수 호출
+1. 메서드 호출
+1. 생성자 함수 호출
+1. Function.prototype.apply/call/bind 메서드에 의한 간접 호출
+
+#### 1. 일반 함수 호출
+
+기본적으로 this에는 전역 객체가 바인딩 된다.
+일반 함수로 호출된 모든 함수(중첩 함수, 콜백 함수 포함) 내부의 this에는 전역 객체가 바인딩된다.
+
+```js
+var value = 1;
+
+const obj = {
+  value: 100,
+  foo() {
+    console.log("foo's this: ", this); //{value: 100, foo: f}
+    // 콜백 함수 내부의 this에는 전역 객체가 바인딩된다.
+    setTimeout(function () {
+      console.log("callback's this: ", this); //window
+      console.log("callback's this.value", this.value); // 1
+    }, 100);
+  },
+};
+
+obj.foo();
+```
+
+자바스크립트는 명시적으로 바인딩할 수 있는 Function.prototype.apply, call, bind 메서드를 제공한다.
+
+```js
+var value = 1;
+
+const obj = {
+  value: 100,
+  foo() {
+    // 콜백 함수에 명시적으로 this를 바인딩한다.
+    setTimeout(
+      function () {
+        console.log("callback's this.value", this.value); // 1
+      }.bind(this),
+      100
+    );
+  },
+};
+
+obj.foo();
+```
+
+또는 화살표 함수를 사용하여 this 바인딩을 일치시킬 수도 있다.
+
+```js
+var value = 1;
+
+const obj = {
+  value: 100,
+  foo() {
+    // 화살표 함수 내부의 this는 상위 스코프의 this르 가리킨다.
+    setTimeout(() => console.log(this.value), 100); // 100
+  },
+};
+
+obj.foo();
+```
+
+#### 2. 메서드 호출
+
+메서드 내부의 this는 프로퍼티로 메서드를 가리키고 있는 객체와는 관계가 없고 메서드를 호출한 객체에 바인딩된다.
