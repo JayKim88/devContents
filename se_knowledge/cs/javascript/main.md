@@ -199,3 +199,133 @@ obj.foo();
 #### 2. 메서드 호출
 
 메서드 내부의 this는 프로퍼티로 메서드를 가리키고 있는 객체와는 관계가 없고 메서드를 호출한 객체에 바인딩된다.
+
+<img src='./image/3-1.png'>
+
+```js
+const person = {
+  name: "Jay",
+  getName() {
+    return this.name;
+  },
+};
+
+const getName = person.getName;
+
+console.log(getName()); // ''
+// 일반 함수로 호출된 getName 함수 내부의 this.name은 브라우저 환경에서 window.name과 같다.
+// 브라우저 환경에서 window.name은 브라우저 창의 이름을 나타내는 빌트인 프로퍼티이며 기본값은 ''이다.
+// Node.js 환경에서 this.name은 undefined이다.
+
+function Person(name) {
+  this.name = name;
+}
+
+Person.prototype.getName = function () {
+  return this.name;
+};
+
+const me = new Person("Lee");
+
+//getName 메서드를 호출한 객체는 me다.
+console.log(me.getName()); // Lee
+
+Person.prototype.name = "Kim";
+
+//getName 메서드를 호출한 객체는 Person.prototype이다.
+console.log(Person.prototype.getName()); // Kim
+```
+
+<img src='./image/3-2.png'>
+
+#### 3. 생성자 함수 호출
+
+생성자 함수 내부의 this에는 생성자 함수가 생성할 인스턴스가 바인딩된다.
+
+```js
+//new 연산자와 함께 호출하지 않으면 생성자 함수로 동작하지 않는다. 즉, 일반적인 함수의 호출이다.
+const circle3 = Circle(15);
+
+// 일반 함수로 호출된 Circle에는 반환문이 없으므로 암묵적으로 undefined를 반환한다.
+console.log(circle3); // undefined
+```
+
+### 4. Function.prototype.apply/call/bind 메서드에 의한 간접 호출
+
+apply와 call 메서드의 본질적인 기능은 함수를 호출하는 것이다.
+
+```js
+function getThisBinding() {
+  console.log(arguments);
+  return this;
+}
+
+// this로 사용할 객체
+const thisArg = { a: 1 };
+
+// getThisBinding 함수를 호출하면서 인수로 전달한 객체를 getThisBinding 함수의 this에 바인딩한다.
+// apply 메서드는 호출할 함수의 인수를 배열로 묶어 전달한다.
+console.log(getThisBinding.call(thisArg, [1, 2, 3]));
+// Arguments(3) [1,2,3, callee: f, Symbol(Symbol.iterator): f]
+// { a: 1 }
+
+// call 메서드는 호출할 함수의 인수를 쉼표로 구분한 리스트 형식으로 전달한다.
+console.log(getThisBinding.call(thisArg, 1, 2, 3));
+// Arguments(3) [1,2,3, callee: f, Symbol(Symbol.iterator): f]
+// { a: 1 }
+```
+
+Function.prototype.bind 메서드는 apply와 call 메서드와 달리 함수를 호출하지 않는다.
+다만 첫 번째 인수로 전달한 값으로 this바인딩이 교체된 함수를 새롭게 생성해 반환한다.
+
+```js
+function getThisBinding() {
+  return this;
+}
+
+// this로 사용할 객체
+const thisArg = { a: 1 };
+
+console.log(getThisBinding.bind(thisArg)); // getThisBinding
+// bind 메서드는 함수를 호출하지는 않으므로 명시적으로 호출해야 한다.
+console.log(getThisBinding.bind(thisArg)()); // { a: 1 }
+```
+
+bind 메서드는 메서드의 this와 메서드 내부의 중첩 함수 또는 콜백 함수의 this가 불일치하는 문제를 해결할 수 있다.
+
+```js
+const person = {
+  name: "Lee",
+  foo(callback) {
+    // 1
+    setTimeout(callback, 100);
+  },
+};
+
+person.foo(function () {
+  console.log(`Hi! my name os ${this.name}`); // 2. Hi! my name is .
+  // 일반 함수로 호출된 콜백 함수 내부의 this.name은 브라우저 환경에서 window.name과 같다.
+  // 브라우저 환경에서 window.name은 브라우저 창의 이름을 나타내는 빌트인 프로퍼티이며 기본값은 ''이다.
+  // Node.js 환경에서 this.name은 undefined이다.
+});
+```
+
+bind 메서드를 사용하여 this를 일치시킬 수 있다.
+
+```js
+const person = {
+  name: "Lee",
+  foo(callback) {
+    // bind 메서드로 callback 함수 내부의 this 바인딩을 전달
+    setTimeout(callback.bind(this), 100);
+  },
+};
+
+person.foo(function () {
+  console.log(`Hi! my name os ${this.name}`); // 2. Hi! my name is Lee.
+});
+```
+
+## Summary
+
+<img src='./image/3-3.png'>
