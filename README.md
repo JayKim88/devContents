@@ -15,6 +15,8 @@
 - [이벤트 루프와 태스크 큐(비동기 처리 프로세스)](https://github.com/JayKim88/dev-contents-TIL/blob/master/se_knowledge/cs/javascript/main.md#-2-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%99%80-%ED%83%9C%EC%8A%A4%ED%81%AC-%ED%81%90%EB%B9%84%EB%8F%99%EA%B8%B0-%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4)
 - [Promise](https://github.com/JayKim88/dev-contents-TIL/blob/master/javascript/modern_js_deep_dive/45.promise/promise.md)
 - [How to deal with Error](https://github.com/JayKim88/dev-contents-TIL/blob/master/javascript/modern_js_deep_dive/47.error-handling/error-handling.md)
+- [This](https://github.com/JayKim88/dev-contents-TIL/blob/master/se_knowledge/cs/javascript/main.md#-3-this)
+- [Bubbling and Capturing](https://github.com/JayKim88/dev-contents-TIL/blob/master/se_knowledge/cs/javascript/main.md#4-%EB%B2%84%EB%B8%94%EB%A7%81%EA%B3%BC-%EC%BA%A1%EC%B2%98%EB%A7%81)
 
 ### Algorithm
 - [Big-O Notation](https://github.com/JayKim88/dev-contents-TIL/blob/master/se_knowledge/cs/algorithm/bigONotation/main.md)
