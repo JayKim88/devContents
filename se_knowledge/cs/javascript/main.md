@@ -250,7 +250,7 @@ const circle3 = Circle(15);
 console.log(circle3); // undefined
 ```
 
-### 4. Function.prototype.apply/call/bind 메서드에 의한 간접 호출
+#### 4. Function.prototype.apply/call/bind 메서드에 의한 간접 호출
 
 apply와 call 메서드의 본질적인 기능은 함수를 호출하는 것이다.
 
@@ -326,6 +326,73 @@ person.foo(function () {
 });
 ```
 
-## Summary
+### Summary
 
 <img src='./image/3-3.png'>
+
+<h2>4. 버블링과 캡처링</h2>
+
+#### 버블링
+
+한 요소에 이벤트가 발생할 경우, 이 요소에 할당된 핸들러가 동작하고, 이어서 부모 요소의 핸들러가 동작한다.이처럼 가장 최상단의 조상 요소를 만날 때까지 이 과정이 반복되면서 요소 각각에 할당된 핸들러가 동작하는 현상을 **버블링**이라 한다.
+이벤트가 가장 깊은 곳의 요소에서 시작되어 부모 요소를 거슬러 올라가며 발생하는 모습이 물속 거품과 유사하여 생긴 이름이다.
+
+아래와 같은 코드가 있을때 가장 안쪽의 p 요소를 클릭하면,
+
+```html
+<style>
+  body * {
+    margin: 10px;
+    border: 1px solid blue;
+  }
+</style>
+
+<form onclick="alert('form')">
+  FORM
+  <div onclick="alert('div')">
+    DIV
+    <p onclick="alert('p')">P</p>
+  </div>
+</form>
+```
+
+1. `<p>` 에 할당된 onclick 핸들러 동작,
+1. 바깥의 `<div>`에 할당된 핸들러 동작,
+1. 그 바깥의 `<form>`에 할당된 핸들러가 동작,
+1. document 객체를 만날 때까지, 각 요소에 할당된 onclick 핸들러가 동작한다.
+
+여기에서 이벤트가 발생한 가장 안쪽의 요소를 타겟(target)이라 부르는데, `event.target` 으로 접근 가능하다.
+
+#### 버블링 중단하는 방법
+
+이벤트 버블링은 타깃 이벤트에서 시작해서 `html`요소를 거쳐 document 객체를 만날 때까지 각 노드에서 모두 발생하는데, 몇몇 이벤트는 window 객체까지 거슬러 올라가기도 한다.
+
+이런 경우에, `event.stopPropagation()` 사용하여 버블링을 방지할 수 있다. 만약, 요소에 할당된 다른 핸들러의 동작도 막고 싶다면 `event.stopImmediatePropagation()`을 사용한다.
+
+```html
+<body onclick="alert(`버블링은 여기까지 도달하지 못합니다.`)">
+  <button onclick="event.stopPropagation()">클릭해 주세요.</button>
+</body>
+```
+
+#### 캡처링
+
+표준 DOM 이벤트에서 정의한 이벤트 흐름엔 아래와 같이 3가지 단계가 있다.
+
+- **캡처링 단계 – 이벤트가 하위 요소로 전파되는 단계**
+- 타깃 단계 – 이벤트가 실제 타깃 요소에 전달되는 단계
+- 버블링 단계 – 이벤트가 상위 요소로 전파되는 단계
+
+onEvent 프로퍼티나 HTML 속성, addEventListener(event, handler)를 이용해 할당된 핸들러는 캡처링에 대해 전혀 알 수 없다. 즉, 이 핸들러들은 두 번째 혹은 세 번째 단계의 이벤트 흐름(타깃 단계와 버블링 단계)에서만 동작하는데, 만약 캡처링 단계에서 이벤트를 잡아내려면 아래와 같이 addEventListener의 capture 옵션을 **true**로 설정하면 된다.
+
+```html
+elem.addEventListener(..., {capture: true})
+```
+
+요약하면, 각 핸들러는 아래와 같은 event 객체의 프로퍼티에 접근할 수 있다.
+
+- `event.target` – 이벤트가 발생한 가장 안쪽의 요소
+- `event.currentTarget (=this)` – 이벤트를 핸들링 하는 현재 요소 (핸들러가 실제 할당된 요소)
+- `event.eventPhase` – 현재 이벤트 흐름 단계(캡처링=1, 타깃=2, 버블링=3)
+
+<strong>핸들러에서 event.stopPropagation()을 사용해 이벤트 버블링을 멈출 수 있다. 다만, 이 방법은 추천하지 않는데, 왜냐하면 지금은 상위 요소에서 이벤트가 어떻게 쓰일지 확실치 않더라도, 추후에 버블링이 필요한 경우가 생기기 때문이다.</strong>
