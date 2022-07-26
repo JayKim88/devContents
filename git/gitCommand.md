@@ -129,7 +129,16 @@ $ git stash drop [stash name]
 $ git stash show -p | git apply -R
 or
 $ git stash show -p [stash name] | git apply -R
+```
 
+6. git stash untracked file
+
+```
+git stash --include-untracked
+or
+git stash -u (shorthand)
+or
+git stash --all (stashes all files, including untracked and ignored files)
 ```
 
 #### 6. apply new modified or files to the last git commit
