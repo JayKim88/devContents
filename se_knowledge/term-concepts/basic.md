@@ -131,3 +131,33 @@ C, C++, Go 언어 등
 - 컴파일 언어처럼 하드웨어를 직접 제어하는 작업은 불가능하다.
 
 출처: https://st-lab.tistory.com/176
+
+### Q4) What is Functional Programming Paradigm ?
+
+- Functional programming is a programming paradigm in which we try to bind everything in pure mathematical functions style.
+- It is a declarative type of programming style.
+- Its main focus is on “what to solve” in contrast to an imperative style where the main focus is “how to solve”.
+
+Concepts of functional programming:
+
+- Pure functions
+
+  - First, they always produce the same output for same arguments irrespective of anything else.
+  - Secondly, they have no side-effects i.e. they do not modify any arguments or local/global variables or input/output streams.
+
+- Recursion
+  - There are no “for” or “while” loop in functional languages. Iteration in functional languages is implemented through recursion.
+- Referential transparency
+  - In functional programs variables once defined do not change their value throughout the program.
+- Functions are First-Class and can be Higher-Order
+
+  - The first class variables can be passed to functions as parameter, can be returned from functions or stored in data structures.
+  - Higher order functions are the functions that take other functions as arguments and they can also return functions.
+
+- Variables are Immutable
+- Shared State
+
+Ref
+
+- [Functional Programming Paradigm](https://www.geeksforgeeks.org/functional-programming-paradigm/amp/)
+- [Master the JavaScript Interview: What is Functional Programming?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
