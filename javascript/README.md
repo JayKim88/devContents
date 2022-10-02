@@ -1,3 +1,5 @@
+# Questions
+
 ### 1. javascript 의 undeclared, undefined, null 의 차이점
 
 1. undeclared (선언되지 않은) 상태
