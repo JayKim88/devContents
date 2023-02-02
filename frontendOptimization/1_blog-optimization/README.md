@@ -1,48 +1,10 @@
-## Lecture-1
+## Lecture-1 블로그 서비스 최적화
 
-'프론트엔드 개발자를 위한, 실전 웹 성능 최적화(feat. React) - Part. 1' 1번째 강의 소스입니다.
+학습할 최적화 기법
 
-### 실행
-
-1. download sources
-
-```
-$ git clone https://github.com/performance-lecture/lecture-1.git
-```
-
-2. install dependencies
-
-```
-$ npm install
-or
-$ yarn
-```
-
-3. start development server
-
-```
-$ npm run start
-or
-$ yarn start
-```
-
-4. start json-server
-
-```
-$ npm run server
-or
-$ yarn server
-```
-*3번의 dev server 와 다른 콘솔에서 띄워줍니다.
-
-5. build + serve
-
-```
-$ npm run serve
-or
-$ yarn serve
-```
-
-### 질문
-
-궁금하신 부분은 강의 내 질문 & 답변 게시판을 이용해주시길 바랍니다.
+- 로딩 성능 최적화
+  - 이미지 사이즈 최적화
+  - 코드 분할
+  - 텍스트 압축
+- 렌더링 성능 최적화
+  - 병목 코드 최적화
