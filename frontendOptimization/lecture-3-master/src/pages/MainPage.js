@@ -24,7 +24,8 @@ function MainPage(props) {
     const callback = (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log("is intersecting", entry.target.dataset.src);
+          console.log("is intersecting in Main Page", entry.target.dataset.src);
+          // viewport 에 해당 이미지가 들어오면 타겟의 src 에 이미지를 넣어주어 보여준다.
           entry.target.src = entry.target.dataset.src;
           observer.unobserve(entry.target);
         }
