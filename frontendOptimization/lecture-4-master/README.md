@@ -1,40 +1,11 @@
-## Lecture-4
+## Lecture-4 홈페이지 최적화
 
-'프론트엔드 개발자를 위한, 실전 웹 성능 최적화(feat. React) - Part. 2'의 2번째 강의 소스입니다.
+학습할 최적화 기법
 
-### 실행
-
-1. download sources
-
-```
-$ git clone https://github.com/performance-lecture/lecture-4.git
-```
-
-2. install dependencies
-
-```
-$ npm install
-or
-$ yarn
-```
-
-3. start development server
-
-```
-$ npm start
-or
-$ yarn start
-```
-
-4. start json-server (image server)
-
-```
-$ npm run server
-or
-$ yarn server
-```
-*3번의 dev server 와 다른 콘솔에서 띄워줍니다.
-
-### 질문
-
-궁금하신 부분은 강의 내 질문 & 답변 게시판 또는 해당 레포지토리의 Issues를 이용해주시기 바랍니다.
+- 이미지 지연 로딩
+  - 이미지 지연 로딩 라이브러리 적용
+- 레이아웃 이동 피하기
+  - 화면상의 요소 변화로 레아이웃이 밀리는 현상
+- 리덕스 렌더링 최적화
+- 병목 코드 최적화
+  - 메모이제이션 적용
