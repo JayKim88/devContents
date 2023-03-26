@@ -10,3 +10,5 @@
 - 캐시 최적화
 - 불필요한 CSS 제거
   - 사용하지 않는 CSS 코드 제거
+
+[블로그에서 내용정리 보기](https://nomadkim880901.tistory.com/entry/3%EC%9E%A5-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%99%EC%8A%B5%EC%A4%91)
